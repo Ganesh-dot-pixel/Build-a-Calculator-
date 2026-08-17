@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background: #1a1a2e;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.display {
+    background: #0f3460;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.display-expression {
+    color: #a0a0a0;
+    font-size: 18px;
+    min-height: 24px;
+    text-align: right;
+    width: 100%;
+}
+
+.display-current {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 300;
+    text-align: right;
+    width: 100%;
+    min-height: 56px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #16213e;
+    color: #ffffff;
+    user-select: none;
+}
+
+button:hover {
+    background: #1a2a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.operator {
+    background: #e94560;
+    color: #ffffff;
+}
+
+button.operator:hover {
+    background: #ff6b8a;
+}
+
+button.equals {
+    background: #0f3460;
+    color: #ffffff;
+}
+
+button.equals:hover {
+    background: #1a4a7a;
+}
+
+button.clear {
+    background: #533483;
+    color: #ffffff;
+}
+
+button.clear:hover {
+    background: #6b44a8;
+}
+
+button.wide {
+    grid-column: span 2;
+}
+
+.button-pressed {
+    animation: buttonPulse 0.15s ease;
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        padding: 15px;
+    }
+    
+    button {
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    .display-current {
+        font-size: 36px;
+    }
+}
